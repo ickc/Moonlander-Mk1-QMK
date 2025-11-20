@@ -1,0 +1,40 @@
+name: Build Moonlander Firmware
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: qmkfm/qmk_cli
+
+    steps:
+    - name: Checkout Config
+      uses: actions/checkout@v4
+      with:
+        path: config
+
+    - name: Checkout QMK Firmware
+      uses: actions/checkout@v4
+      with:
+        repository: zsa/qmk_firmware
+        ref: firmware25
+        path: qmk_firmware
+        submodules: recursive
+
+    - name: Copy Keymap
+      run: |
+        mkdir -p qmk_firmware/keyboards/zsa/moonlander/keymaps/latest
+        # Copy contents of src from the checked out config (which is the submodule repo itself now)
+        cp -r config/src/* qmk_firmware/keyboards/zsa/moonlander/keymaps/latest/
+
+    - name: Compile Firmware
+      run: |
+        cd qmk_firmware
+        qmk compile -kb zsa/moonlander -km latest
+
+    - name: Upload Firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: moonlander_firmware
+        path: qmk_firmware/*.bin
