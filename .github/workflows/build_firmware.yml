@@ -24,14 +24,14 @@ jobs:
 
     - name: Copy Keymap
       run: |
-        mkdir -p qmk_firmware/keyboards/zsa/moonlander/keymaps/latest
+        mkdir -p qmk_firmware/keyboards/zsa/moonlander/reva/keymaps/latest
         # Copy contents of src from the checked out config (which is the submodule repo itself now)
-        cp -r config/src/* qmk_firmware/keyboards/zsa/moonlander/keymaps/latest/
+        cp -r config/src/* qmk_firmware/keyboards/zsa/moonlander/reva/keymaps/latest/
 
     - name: Compile Firmware
       run: |
         cd qmk_firmware
-        qmk compile -kb zsa/moonlander -km latest
+        qmk compile -kb zsa/moonlander/reva -km latest
 
     - name: Upload Firmware
       uses: actions/upload-artifact@v4
