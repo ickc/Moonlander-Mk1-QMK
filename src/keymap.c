@@ -10,7 +10,6 @@ enum custom_keycodes {
   MAC_MISSION_CONTROL,
   MAC_SPOTLIGHT,
   MAC_SIRI,
-  MAC_DND,
 };
 
 
@@ -35,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [2] = LAYOUT_moonlander(
     KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_F6,          KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         KC_F12,         
-    KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP,MAC_MISSION_CONTROL,MAC_SPOTLIGHT,  MAC_SIRI,       MAC_DND,        KC_PAGE_UP,                                     KC_HOME,        KC_MEDIA_PREV_TRACK,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,KC_AUDIO_MUTE,  KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,
+    KC_BRIGHTNESS_DOWN,KC_BRIGHTNESS_UP,MAC_MISSION_CONTROL,MAC_SPOTLIGHT,  MAC_SIRI,       KC_F13,         KC_PAGE_UP,                                     KC_HOME,        KC_MEDIA_PREV_TRACK,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,KC_AUDIO_MUTE,  KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,
     RGB_SPI,        RGB_HUI,        KC_NO,          KC_UP,          KC_NO,          RGB_SAI,        KC_PGDN,                                                                        KC_END,         RGB_VAI,        KC_MS_BTN1,     KC_MS_UP,       KC_MS_BTN2,     MOON_LED_LEVEL, AU_TOGG,        
     RGB_SPD,        RGB_HUD,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       RGB_SAD,                                        RGB_VAD,        KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    MU_NEXT,        MU_TOGG,        
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, TOGGLE_LAYER_COLOR,                                                                                                RGB_MODE_FORWARD,KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
@@ -43,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [3] = LAYOUT_moonlander(
     KC_F12,         KC_F11,         KC_F10,         KC_F9,          KC_F8,          KC_F7,          KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_F6,          KC_F5,          KC_F4,          KC_F3,          KC_F2,          KC_F1,          
-    KC_AUDIO_VOL_UP,KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,  KC_MEDIA_NEXT_TRACK,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_PREV_TRACK,KC_HOME,                                        KC_PAGE_UP,     MAC_DND,        MAC_SIRI,       MAC_SPOTLIGHT,  MAC_MISSION_CONTROL,KC_BRIGHTNESS_UP,KC_BRIGHTNESS_DOWN,
+    KC_AUDIO_VOL_UP,KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,  KC_MEDIA_NEXT_TRACK,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_PREV_TRACK,KC_HOME,                                        KC_PAGE_UP,     KC_F13,         MAC_SIRI,       MAC_SPOTLIGHT,  MAC_MISSION_CONTROL,KC_BRIGHTNESS_UP,KC_BRIGHTNESS_DOWN,
     AU_TOGG,        MOON_LED_LEVEL, KC_MS_BTN2,     KC_MS_UP,       KC_MS_BTN1,     RGB_VAI,        KC_END,                                                                         KC_PGDN,        RGB_SAI,        KC_NO,          KC_UP,          KC_NO,          RGB_HUI,        RGB_SPI,        
     MU_TOGG,        MU_NEXT,        KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    RGB_VAD,                                        RGB_SAD,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       RGB_HUD,        RGB_SPD,        
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, RGB_MODE_FORWARD,                                                                                                TOGGLE_LAYER_COLOR,KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
@@ -91,8 +90,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       HCS(0x221);
     case MAC_SIRI:
       HCS(0xCF);
-    case MAC_DND:
-      HSS(0x9B);
 
     case RGB_SLD:
         if (rawhid_state.rgb_control) {
