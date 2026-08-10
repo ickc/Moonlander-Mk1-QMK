@@ -23,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LBRC,        KC_A,           KC_S,           KC_D,           KC_F,           KC_G,           KC_RIGHT,                                                                       KC_DOWN,        KC_H,           KC_J,           KC_K,           KC_L,           KC_SCLN,        KC_QUOTE,       
     KC_RBRC,        KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_BSLS,        
     KC_CAPS,        KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_LEFT_SHIFT,  OSL(1),                                                                                                         OSL(1),         KC_RIGHT_SHIFT, KC_RIGHT_GUI,   KC_RIGHT_ALT,   KC_RIGHT_CTRL,  KC_CAPS,        
-    KC_SPACE,       KC_TAB,         LT(2, KC_GRAVE),                TT(2),          KC_ENTER,       KC_BSPC
+    KC_SPACE,       KC_TAB,         LT(2, KC_GRAVE),                MO(2),          KC_ENTER,       KC_BSPC
   ),
   [1] = LAYOUT_moonlander(
     KC_MINUS,       KC_0,           KC_9,           KC_8,           KC_7,           KC_6,           KC_DELETE,                                      KC_SYSTEM_POWER,KC_5,           KC_4,           KC_3,           KC_2,           KC_1,           KC_GRAVE,       
@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_QUOTE,       KC_SCLN,        KC_L,           KC_K,           KC_J,           KC_H,           KC_DOWN,                                                                        KC_RIGHT,       KC_G,           KC_F,           KC_D,           KC_S,           KC_A,           KC_LBRC,        
     KC_BSLS,        KC_SLASH,       KC_DOT,         KC_COMMA,       KC_M,           KC_N,                                           KC_B,           KC_V,           KC_C,           KC_X,           KC_Z,           KC_RBRC,        
     KC_TRANSPARENT, KC_RIGHT_CTRL,  KC_RIGHT_ALT,   KC_RIGHT_GUI,   KC_RIGHT_SHIFT, KC_TRANSPARENT,                                                                                                 KC_TRANSPARENT, KC_LEFT_SHIFT,  KC_LEFT_GUI,    KC_LEFT_ALT,    KC_LEFT_CTRL,   KC_TRANSPARENT, 
-    KC_BSPC,        KC_ENTER,       TT(3),                          LT(3, KC_GRAVE),KC_TAB,         KC_SPACE
+    KC_BSPC,        KC_ENTER,       MO(3),                          LT(3, KC_GRAVE),KC_TAB,         KC_SPACE
   ),
   [2] = LAYOUT_moonlander(
     KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_F6,          KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         KC_F12,         
