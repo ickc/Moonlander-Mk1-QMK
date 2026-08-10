@@ -18,7 +18,7 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
-    KC_GRAVE,       KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_SYSTEM_POWER,                                KC_DELETE,      KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,       
+    KC_GRAVE,       KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_6,                                           KC_DELETE,      KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,       
     KC_ESCAPE,      KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_LEFT,                                        KC_UP,          KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_EQUAL,       
     KC_LBRC,        KC_A,           KC_S,           KC_D,           KC_F,           KC_G,           KC_RIGHT,                                                                       KC_DOWN,        KC_H,           KC_J,           KC_K,           KC_L,           KC_SCLN,        KC_QUOTE,       
     KC_RBRC,        KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_BSLS,        
@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_SPACE,       KC_TAB,         LT(2, KC_GRAVE),                MO(2),          KC_ENTER,       KC_BSPC
   ),
   [1] = LAYOUT_moonlander(
-    KC_MINUS,       KC_0,           KC_9,           KC_8,           KC_7,           KC_6,           KC_DELETE,                                      KC_SYSTEM_POWER,KC_5,           KC_4,           KC_3,           KC_2,           KC_1,           KC_GRAVE,       
+    KC_MINUS,       KC_0,           KC_9,           KC_8,           KC_7,           KC_6,           KC_DELETE,                                      KC_6,           KC_5,           KC_4,           KC_3,           KC_2,           KC_1,           KC_GRAVE,       
     KC_EQUAL,       KC_P,           KC_O,           KC_I,           KC_U,           KC_Y,           KC_UP,                                          KC_LEFT,        KC_T,           KC_R,           KC_E,           KC_W,           KC_Q,           KC_ESCAPE,      
     KC_QUOTE,       KC_SCLN,        KC_L,           KC_K,           KC_J,           KC_H,           KC_DOWN,                                                                        KC_RIGHT,       KC_G,           KC_F,           KC_D,           KC_S,           KC_A,           KC_LBRC,        
     KC_BSLS,        KC_SLASH,       KC_DOT,         KC_COMMA,       KC_M,           KC_N,                                           KC_B,           KC_V,           KC_C,           KC_X,           KC_Z,           KC_RBRC,        
